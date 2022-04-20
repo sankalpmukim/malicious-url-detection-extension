@@ -11,8 +11,18 @@ const isMaliciousBool = (result) => {
 };
 
 const isMalicious = async (url) => {
+  const approvedStrings = [
+    "i.pinimg.com/originals/11/93/75/1193757011cacbb72f",
+    "mal-url-detector.azurewebsites",
+    "sankalpmukim.github.io",
+  ];
+  const includesApprovedStrings = (str) => {
+    return approvedStrings.some((approvedString) => {
+      return str.includes(approvedString);
+    });
+  };
   try {
-    if (url.indexOf("mal-url-detector.azurewebsites") !== -1) {
+    if (includesApprovedStrings(url)) {
       return false;
     }
     const data = await makeCheckRequest(url);
