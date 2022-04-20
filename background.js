@@ -35,6 +35,9 @@ browser.webRequest.onBeforeRequest.addListener(
   async function (requestDetails) {
     if (await isMalicious(requestDetails.url)) {
       console.log("malicious");
+      browser.tabs.sendMessage(requestDetails.tabId, {
+        command: "malicious",
+      });
 
       return {
         cancel: true,
