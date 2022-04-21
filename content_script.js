@@ -13,7 +13,7 @@
     if (message.command === "malicious") {
       console.log("malicious");
       const maliciousUrlError = `
-      <img src="https://i.pinimg.com/originals/11/93/75/1193757011cacbb72f66047f019dd2c6.jpg" height="35vh" />
+      <img src="https://media.discordapp.net/attachments/923537917526306857/966316319697936404/1193757011cacbb72f66047f019dd2c6.jpg?width=483&height=468" height="35vh" />
       <p style="font-size: large;">The URL you are trying to visit is not allowed.</p>
       `;
       const element = document.createElement("div");

@@ -38,7 +38,6 @@ const isMalicious = async (url) => {
       return false;
     }
   }
-  //   return res.json();
 };
 
 browser.webRequest.onBeforeRequest.addListener(
